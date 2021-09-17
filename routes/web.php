@@ -16,4 +16,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::post('/send', [HomeController::class, 'send'])->name('send');
-Route::get('/receive', [HomeController::class, 'receive'])->name('receive');
+Route::get('/api/receive', [HomeController::class, 'receive_get'])->name('receive_get');

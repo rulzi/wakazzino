@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -27,8 +28,15 @@ class HomeController extends Controller
         return redirect(route('index'));
     }
 
-    public function receive(Request $request)
+    public function receive_get(Request $request)
     {
-        
+        Log::info("GET");
+        Log::info($request);
+    }
+
+    public function receive_post(Request $request)
+    {
+        Log::info("POST");
+        Log::info($request);
     }
 }
