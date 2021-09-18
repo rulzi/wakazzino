@@ -20,7 +20,7 @@
         </style>
         <style>
             /* Style inputs with type="text", select elements and textareas */
-            input[type=text], select, textarea {
+            input[type=text], select, textarea, input[type=file] {
             width: 100%; /* Full width */
             padding: 12px; /* Some padding */ 
             border: 1px solid #ccc; /* Gray border */
@@ -30,6 +30,7 @@
             margin-bottom: 16px; /* Bottom margin */
             resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
             }
+            
 
             /* Style the submit button with a specific background color etc */
             input[type=submit] {
@@ -57,13 +58,16 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="container">
-                <form  action="{{ route('send') }}" method="POST">
+                <form  action="{{ route('send-document') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <label for="fname">Nomer</label>
                     <input type="text" id="fname" name="number" placeholder="No">
 
                     <label for="subject">Subject</label>
                     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                    <label for="fname">Image</label>
+                    <input type="file" id="file" name="file" placeholder="Image">
 
                     <input type="submit" value="Send">
                     <br>
