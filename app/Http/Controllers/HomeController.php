@@ -60,7 +60,7 @@ class HomeController extends Controller
 
         $send = $client->request('POST', '/api/whatsapp/instances/send-media/50022', ['body' => json_encode($data)]);
 
-        return redirect(route('index'));
+        return redirect(route('image'));
     }
 
     public function send_document(Request $request)
@@ -81,11 +81,9 @@ class HomeController extends Controller
             'type' => "document",
         ];
 
-        dd($data);
-
         $send = $client->request('POST', '/api/whatsapp/instances/send-media/50022', ['body' => json_encode($data)]);
 
-        return redirect(route('index'));
+        return redirect(route('document'));
     }
 
     public function receive_get(Request $request)
